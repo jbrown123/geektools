@@ -77,7 +77,8 @@
                             <li>Pause mode ('b' or '.')</li>
                             <li>Embeded media (video / audio) with optional autoplay</li>
                             <li>Export to PDF (chrome only)</li>
-                            <li>Multiplexing - audience can follow along</li>
+                            <li>Multiplexing - audience can follow along<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try it now: &nbsp; <a href="http://jbrown123.github.io/geektools">jbrown123.github.io/geektools</a></li>
                         </ul>
                         <aside class="notes">
                             Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
@@ -580,7 +581,7 @@ pause -1 "Press any key to exit"
                     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
                     
                     { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
-                    //{ src: 'plugin/multiplex/master.js', async: true },     // master
+                    { src: 'plugin/multiplex/master.js', async: true },     // master
                     { src: 'plugin/multiplex/client.js', async: true },     // client
             
                     // server side speaker notes
