@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Geek Tools - Things to make your life easier</title>
+
+		<meta name="description" content="A set of tools to make your life easier">
+		<meta name="author" content="James Brown; Sr. Research Scientist; Adobe Systems Incorporated">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="intro">
+                    <h1>Geek Tools</h1>
+					<h3>Things that make your life easier</h3>
+					<p>
+						<small>James Brown | Sr. Research Scientist</small>
+					</p>
+				</section>
+                <section id="agenda">
+                    <h3>Agenda</h3>
+                    <ul>
+                        <li class="fragment highlight-current-blue">Reveal.js - html presentations made easy</li>
+                        <li class="fragment highlight-current-blue">Intercall options - change your defaults</li>
+                        <li class="fragment highlight-current-blue">CrashPlan - free backup tool for home</li>
+                        <li class="fragment highlight-current-blue">Follow Up Then - free and easy reminders via email</li>
+                        <li class="fragment highlight-current-blue">Using git branches for demos / presentations</li>
+                        <li class="fragment highlight-current-blue">GitHub gists to share code samples and scripts</li>
+                        <li class="fragment highlight-current-blue">SQLite - free SQL database with no setup</li>
+                        <li class="fragment highlight-current-blue">Gnuplot - generate graphs from the command line</li>
+                    </ul>
+                </section>
+
+                <section id="reveal">
+                    <section data-theme="default">
+                        <h1>Reveal.js</h1>
+                        <h3>HTML Presentations Made Easy</h3>
+                        <p>
+                            <small>Available on <a href="https://github.com/hakimel/reveal.js">github.com/hakimel/reveal.js</a></small>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h3>Reveal.JS Features</h3>
+                        <ul>
+                            <li>Speaker notes (requires a webserver)</li>
+                            <li>Slide overview</li>
+                            <li>Vertical / nested slides</li>
+                            <li>Link between slides <a href="#/questions">internally</a> or <a href="http://imcaspar.github.io/try-respi/#/3/3">externally</a></li>
+                            <li>Mobile browser friendly</li>
+                            <li>Pause mode ('b' or '.')</li>
+                            <li>Embeded media (video / audio) with optional autoplay</li>
+                            <li>Export to PDF (chrome only)</li>
+                            <li>Multiplexing - audience can follow along</li>
+                        </ul>
+                        <aside class="notes">
+                            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+                        </aside>
+                    </section>
+                    
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## Markdown support
+
+                            For those of you who like that sort of thing. 
+                            Instructions and a bit more info available [on github](https://github.com/hakimel/reveal.js#markdown).
+
+                            ```
+                            <section data-markdown>
+                              ## Markdown support
+
+                              For those of you who like that sort of thing.
+                              Instructions and a bit more info available 
+                              [on github](https://github.com/hakimel/reveal.js#markdown).
+                            </section>
+                            ```
+                        </script>
+                    </section>
+                    
+                    <section id="transitions">
+                        <h2>Transition Styles</h2>
+                        <p>
+                            You can select from different transitions, like: <br>
+                            <a href="?transition=cube#/transitions">Cube</a> -
+                            <a href="?transition=page#/transitions">Page</a> -
+                            <a href="?transition=concave#/transitions">Concave</a> -
+                            <a href="?transition=zoom#/transitions">Zoom</a> -
+                            <a href="?transition=linear#/transitions">Linear</a> -
+                            <a href="?transition=fade#/transitions">Fade</a> -
+                            <a href="?transition=none#/transitions">None</a> -
+                            <a href="?#/transitions">Default</a>
+                        </p>
+                    </section>
+
+                    <section id="themes">
+                        <h2>Themes</h2>
+                        <p>
+                            Reveal.js comes with a few themes built in: <br>
+                            <a href="?#/themes">Default</a> -
+                            <a href="?theme=sky#/themes">Sky</a> -
+                            <a href="?theme=beige#/themes">Beige</a> -
+                            <a href="?theme=simple#/themes">Simple</a> -
+                            <a href="?theme=serif#/themes">Serif</a> -
+                            <a href="?theme=night#/themes">Night</a> <br>
+                            <a href="?theme=moon#/themes">Moon</a> -
+                            <a href="?theme=solarized#/themes">Solarized</a>
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Global State</h2>
+                        <p>
+                            Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+                            will be added as a class to the document element when the slide is open. This lets you
+                            apply broader style changes, like switching the background.
+                        </p>
+                        <h2>Custom Events</h2>
+                        <p>
+                            Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+                        </p>
+                        <pre><code data-trim contenteditable style="font-size: 18px; margin-top: 20px;">
+    Reveal.addEventListener( 'customevent', function() {
+        console.log( '"customevent" has fired' );
+    } );
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Clever Quotes</h2>
+                        <p>
+                            These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+                            &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+                        </p>
+                        <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+                            &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+                            reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+                        </blockquote>
+                    </section>
+
+                    <section>
+                        <h2>Pretty Code</h2>
+                        <pre><code data-trim contenteditable>
+    function linkify( selector ) {
+      if( supports3DTransforms ) {
+
+        var nodes = document.querySelectorAll( selector );
+
+        for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+          var node = nodes[i];
+
+          if( !node.className ) {
+            node.className += ' roll';
+          }
+        }
+      }
+    }
+                        </code></pre>
+                        <p>Courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+                    </section>
+
+					<section id="fragments">
+						<h2>Fragmented Views</h2>
+						<p>Hit the next arrow...</p>
+						<p class="fragment">... to step through ...</p>
+						<ol>
+                            <li class="fragment grow highlight-current-blue">grow</li>
+                            <li class="fragment shrink highlight-current-blue">shrink</li>
+                            <li class="fragment roll-in">roll-in</li>
+                            <li class="fragment fade-out">fade-out</li>
+                            <li class="fragment highlight-red">highlight-red</li>
+						</ol>
+
+						<aside class="notes">
+							This slide has fragments which are also stepped through in the notes window.
+						</aside>
+					</section>
+                    
+                    <section>
+                        <h1>Reveal.js</h1>
+                        <h3>HTML Presentations Made Easy</h3>
+                        <p>
+                            <small>Available on <a href="https://github.com/hakimel/reveal.js">github.com/hakimel/reveal.js</a></small>
+                        </p>
+                    </section>
+                </section>
+
+
+                
+                
+                
+                
+                <!-- INTERCALL -->
+                <section id="intercall">
+                    <section data-theme="default">
+                        <h1>Intercall Options</h1>
+                        <p>How to set defaults for intercall</p>
+                        <p>Available at <a href="http://www.intercall.com/adobe/">www.intercall.com/adobe</a></p>
+                    </section>
+                    
+                    <section>
+                        <h3>Intercall Website</h3>
+                        <small>SSO login at <a href="http://www.intercall.com/adobe/">www.intercall.com/adobe</a></small>
+                        <iframe class="stretch" src="http://www.intercall.com/adobe/" seemless="seemless"></iframe>
+                    </section>
+                    
+                    <section>
+                        <h3>Intercall Website</h3>
+                        <small>SSO login at <a href="http://www.intercall.com/adobe/">www.intercall.com/adobe</a></small>
+                        <img src="intercall1.png"></img>
+                    </section>
+                
+                    <section>
+                        <h3>Intercall Website</h3>
+                        <small>SSO login at <a href="http://www.intercall.com/adobe/">www.intercall.com/adobe</a></small>
+                        <img src="intercall2.png"></img>
+                    </section>
+            
+                    <section>
+                        <h3>Intercall Website</h3>
+                        <small>SSO login at <a href="http://www.intercall.com/adobe/">www.intercall.com/adobe</a></small>
+                        <img src="intercall3.png"></img>
+                    </section>
+
+                    <section>
+                        <h3>Intercall Website</h3>
+                        <small>SSO login at <a href="http://www.intercall.com/adobe/">www.intercall.com/adobe</a></small>
+                        <img src="intercall4.png"></img>
+                    </section>
+    
+                    <section>
+                        <h3>Intercall Cheat Sheet</h3>
+                        <pre style="text-align: left">
+    <strong>Muting Commands</strong>
+    *5 --- Mute all lines except leader
+    #5 --- Unmutes all lines
+    *6 --- Mute an individual line
+    #6 --- Unmute an individual line
+
+    <strong>Announcement Commands</strong>
+    *3 --- Change entry/exit announcement (name, tone, silence)
+
+    <strong>Other Commands</strong>
+    ** --- List available keypad commands
+    *# --- Participant count
+    *2 --- Begin/End recording of conference
+    *4 --- Private roll call
+    *0 --- Operator assistance -- conference
+    00 --- Operator assistance -- individual
+    *1 --- Dial-out to a participant
+    *7 | #7 --- Lock | Unlock conference (incl. organizer)
+    *8 --- Allow | Disallow conference continuation
+                        </pre>
+                    </section>
+                </section>
+
+
+                
+                
+                
+                
+                <!-- CrashPlan -->
+                <section id="crashplan">
+                    <section data-theme="default">
+                        <h1>CrashPlan</h1>
+                        <p>FREE backup software for home</p>
+                        <p>Available at <a href="http://www.code42.com/crashplan">www.code42.com/crashplan</a></p>
+                    </section>
+                    
+                    <section>
+                        <h3>CrashPlan free version</h3>
+                        <ul>
+                            <li>Clients for Linux, Windows, Mac</li>
+                            <li>Backup to external hard drive or other computers</li>
+                            <li>Once daily incremental or differential backups</li>
+                            <li>Select specific files / folders for backup</li>
+                            <li>Encrypted backup and encrypted transmission</li>
+                            <li>Automatic status emails (not backed up, etc.)</li>
+                            <li>Restore individual files</li>
+                            <li>Self-healing archives</li>
+                            <li>Keep deleted files forever* <small><i>*(not available for IRS employees)</i></small></li>
+                        </ul>
+                    </section>
+                    
+                </section>
+
+
+                
+                
+                
+                
+                <!-- Follow Up Then -->
+                <section id="followupthen">
+                    <section data-theme="default">
+                        <h1>Follow Up then</h1>
+                        <p>Free and easy reminders via email</p>
+                        <p>Available at <a href="http://www.followupthen.com">www.followupthen.com</a> or <a href="http://fut.io/">fut.io</a></p>
+                    </section>
+                    <section>
+                        <h3>Follow Up ThenWebsite</h3>
+                        <small>Available at <a href="http://www.followupthen.com">www.followupthen.com</a> or <a href="http://fut.io/">fut.io</a></small>
+                        <iframe class="stretch" src="https://www.followupthen.com" seemless="seemless"></iframe>
+                        <aside class="notes">
+                            scroll down on main page
+                            click 'how to use' to see some examples
+                        </aside>
+                    </section>
+                </section>
+
+
+                
+                
+                
+                
+                <!-- git branches -->
+                <section id="gitbranches">
+                    <section data-theme="default">
+                        <h1>Git Branches</h1>
+                        <p>The easy way to present code in demos and presentations</p>
+                    </section>
+                    <section>
+                        <h3>Basic Git Branching Commands</h3>
+                        <pre><code data-trim contenteditable>
+$ git checkout -b demo1
+    create branch demo1 and switch to that branch
+
+$ git add democode.js
+$ git commit -m "whats in this version"
+    add file(s) and commit as normal
+
+$ git checkout -b demo2
+    create a new branch for the next version
+
+$ git checkout demo1
+    switch between branches
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1>DEMO!</h1>
+                        <aside class="notes">
+                            checkout demo1 - demo5 while democode.js is open in win32pad
+                        </aside>
+                    </section>
+                </section>
+
+
+                
+                
+                
+                
+                <!-- GitHub Gists -->
+                <section id="gists">
+                    <section data-theme="default">
+                        <h1>GitHub Gists</h1>
+                        <p>Easily share snippets and pastes with others</p>
+                        <p>Available at <a href="https://gist.github.com/">gist.github.com</a></p>
+                        <p>Internally at <a href="https://git.corp.adobe.com/gist/">git.corp.adobe.com/gist</a></p>
+                    </section>
+                    
+                    <section>
+                        <h3>Gist Basics</h3>
+                        <ul>
+                            <li>Public (searchable) or secret* gists</li>
+                            <li>Every gist is a full git repository (clone, fork, etc.)</li>
+                            <li>Gists can be embedded in articles, blogs, etc.</li>
+                            <li>Gists have a filename and language (linked to file extension)</li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h3>Gist help</h3>
+                        <small>Available at <a href="https://help.github.com/articles/about-gists">help.github.com/articles/about-gists</a></small>
+                        <iframe class="stretch" src="./about-gists.html" seemless="seemless"></iframe>
+                    </section>
+                </section>
+
+
+                
+                
+                
+                
+                <!-- SQLite -->
+                <section id="sqlite">
+                    <section data-theme="default">
+                        <h1>SQLite</h1>
+                        <p>Serverless, public domain SQL database engine</p>
+                        <p>Available at <a href="http://www.sqlite.org">www.sqlite.org</a></p>
+                    </section>
+                    
+                    <section>
+                        <h3>SQLite Features</h3>
+                        <ul>
+                            <li>Self-contained, serverless, zero configuration, ACID transactional database</li>
+                            <li>Implements most of SQL92</li>
+                            <li>Most widly depoloyed SQL database engine in the world*</li>
+                            <li>Public domain source code / use for any purpose</li>
+                            <li>Used by many embedded systems including smart phones</li>
+                            <li>Embedded in many apps including Firefox and Chrome</li>
+                            <li>Database in a single cross-platform file</li>
+                            <li>Less than 500KB of ANSI-C code (less w/o optional features)</li>
+                            <li>Bindings for dozens of languages</li>
+                            <li>No external dependencies</li>
+                            <li>Cross platform: Unix, Linux, OS-X, Android, IOS, Windows</li>
+                            <li>Stand alone CLI client</li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h1>DEMO!</h1>
+                        <aside class="notes">
+                            1 GB file
+                            1M rows in songs table
+                            
+                            sqlite3 track_metadata.db
+                            .schema
+                            select count(*) from songs;
+                            select count(*) as cnt, artist_name from songs group by artist_name order by cnt desc limit 25;
+                        </aside>
+                    </section>
+                </section>
+
+
+                
+                
+                
+                
+                <!-- GnuPlot -->
+                <section id="gnuplot">
+                    <section data-theme="default">
+                        <h1>GNUPlot</h1>
+                        <p>Cross platform CLI graphing utility</p>
+                        <p>Available at <a href="http://www.gnuplot.info">www.gnuplot.info</a></p>
+                    </section>
+                    
+                    <section>
+                        <h3>GnuPlot Features</h3>
+                        <ul>
+                            <li>Cross platform</li>
+                            <li>Output to console or file (pdf, png, gif, jpg, etc.)</li>
+                            <li>Mousable web display output (HTML5, svg)</li>
+                            <li>2D, 3D, and 4D plots (3D heat maps)</li>
+                            <li>Mix and match chart types on the same plot</li>
+                            <li>Real-time plotting</li>
+                            <li>Single or multiple graphs</li>
+                            <li>Scripted or interactive interface</li>
+                        </ul>
+                    </section>
+                    
+                    <section>
+                        <h3>GNUPlot Examples</h3>
+                        <img src="http://gnuplot.sourceforge.net/demo/showcase_plot.2.png">
+                        <img src="http://gnuplot.sourceforge.net/demo/showcase_plot.1.png">
+                    </section>
+                    
+                    <section>
+                        <h3>GNUPlot Examples</h3>
+                        <img src="http://gnuplot.sourceforge.net/demo/hidden.4.png">
+                        <img src="http://gnuplot.sourceforge.net/demo/simple.1.png">
+                    </section>
+                    
+                    <section>
+                        <h3>GNUPlot Examples</h3>
+                        <img src="http://gnuplot.sourceforge.net/demo/contours.18.png">
+                        <img src="http://gnuplot.sourceforge.net/demo/heatmaps.3.png">
+                    </section>
+                    
+                    <section>
+                        <h3>GNUPlot Gas Prices Example</h3>
+                        <p>gasprices.gp</p>
+                        <pre><code data-trim contenteditable>
+set terminal windows
+set datafile separator ","
+set xtic rotate
+set xtics ("Apr 1993" 0, "Jan 2000" 82, "Jan 2006" 154, \
+        "Jul 2008" 184, "Dec 2008" 189, "Jul 2014" 256)
+plot 'GasPricesMonthly.csv' using 0:2 with lines title "Gas Prices", \
+        'GasStationIncome.csv' using 0:2 with lines axes x1y2 title "Station Income"
+pause -1 "Press any key to exit"
+                        </code></pre>
+                    </section>
+                    
+                    <section>
+                        <h3>GNUPlot Gas Prices Example</h3>
+                        <p>gasprices.gp</p>
+                        <img src="gasprices.png">
+                    </section>
+                </section>
+
+
+                
+                
+
+
+				<section id='questions'>
+					<h1>QUESTIONS</h1>
+					<p>James Brown | Sr. Research Scientist</p>
+                    <br>
+                    <small><ul>
+                        <li>Reveal.js - html presentations made easy</li>
+                        <li>Intercall options - change your defaults</li>
+                        <li>CrashPlan - free backup tool for home</li>
+                        <li>Follow Up Then - free and easy reminders via email</li>
+                        <li>Using git branches for demos / presentations</li>
+                        <li>GitHub gists to share code samples and scripts</li>
+                        <li>SQLite - free SQL database with no setup</li>
+                        <li>Gnuplot - generate graphs from the command line</li>
+                    </ul></small>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,     // display controls in bottom right corner
+				progress: true,
+				history: true,
+				center: true,
+
+                transition: 'fade',
+                theme: 'solarized',   // default, sky, beige, simple, serif, night, moon, solarized
+                
+                slideNumber: true,
+
+				//theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				//transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+                multiplex: {
+                    secret: "14121823608244958212",
+                    id: "48dc55c8b73fd641",
+                    url: "revealjs.jit.su:80"
+                },
+                
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					
+                    // speaker notes
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    
+                    { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
+                    { src: 'plugin/multiplex/master.js', async: true },
+                    { src: 'plugin/multiplex/client.js', async: true },
+            
+                    // server side speaker notes
+                    // { src: 'plugin/notes-server/client.js', async: true }
+				]
+			});
+
+            // implement slide specific theme loading via data-theme
+            Reveal.addEventListener('slidechanged', function SlideChangedHandler (event) {
+                // console.log('slide change: '); console.log(event);
+                // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+
+                // first time called, remember what the default theme is
+                if (!SlideChangedHandler.defaultTheme)
+                    SlideChangedHandler.defaultTheme = Reveal.getConfig().theme;
+
+                // is this slide part of a verticle stack?  check for parent theme override & apply to this slide
+                if (!event.currentSlide.dataset.theme && event.currentSlide.parentNode.nodeName.match( /section/i ) && event.currentSlide.parentNode.dataset.theme)
+                    event.currentSlide.dataset.theme = event.currentSlide.parentNode.dataset.theme;
+                
+                // if this slide has a data-theme attribute, set it as the theme
+                if (event.currentSlide.dataset.theme)
+                    Reveal.configure({ theme: event.currentSlide.dataset.theme });
+                // if the previous slide had a custom theme and this slide does not (hence the else), reset the theme
+                else if (event.previousSlide && event.previousSlide.dataset.theme)
+                    Reveal.configure({ theme: SlideChangedHandler.defaultTheme});
+
+            } );
+		</script>
+
+	</body>
+</html>
