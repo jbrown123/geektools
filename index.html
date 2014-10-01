@@ -562,10 +562,10 @@ pause -1 "Press any key to exit"
 				// parallaxBackgroundSize: '2100px 900px',
 
                 multiplex: {
-                    //secret: "14121823608244958212",
-                    secret: null,
-                    id: "48dc55c8b73fd641",
-                    url: "revealjs.jit.su:80"
+                    // secret: "14121848301109036546",     // master
+                    secret: null,        // client
+                    id: "1eb3131c5a7455e3",
+                    url: "jambrown-w7-2.corp.adobe.com:1948"
                 },
                 
 				// Optional libraries used to extend on reveal.js
@@ -580,8 +580,8 @@ pause -1 "Press any key to exit"
                     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
                     
                     { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
-                    //{ src: 'plugin/multiplex/master.js', async: true },
-                    { src: 'plugin/multiplex/client.js', async: true },
+                    //{ src: 'plugin/multiplex/master.js', async: true },     // master
+                    { src: 'plugin/multiplex/client.js', async: true },     // client
             
                     // server side speaker notes
                     // { src: 'plugin/notes-server/client.js', async: true }
