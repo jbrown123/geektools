@@ -562,7 +562,8 @@ pause -1 "Press any key to exit"
 				// parallaxBackgroundSize: '2100px 900px',
 
                 multiplex: {
-                    secret: "14121823608244958212",
+                    //secret: "14121823608244958212",
+                    secret: null,
                     id: "48dc55c8b73fd641",
                     url: "revealjs.jit.su:80"
                 },
@@ -579,7 +580,7 @@ pause -1 "Press any key to exit"
                     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
                     
                     { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
-                    { src: 'plugin/multiplex/master.js', async: true },
+                    //{ src: 'plugin/multiplex/master.js', async: true },
                     { src: 'plugin/multiplex/client.js', async: true },
             
                     // server side speaker notes
